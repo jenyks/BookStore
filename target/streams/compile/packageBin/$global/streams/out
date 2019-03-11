@@ -1,0 +1,19 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/bookstroreapplication_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/Book.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Book.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/Server$MyHandler.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Server$MyHandler.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/Server.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Server.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/BookStoreApp$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/BookStoreApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/BookStoreApp$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore/BookStoreApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	bookStore[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
