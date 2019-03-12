@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/BookStoreApp.scala:111:36: variable price does nothing other than call itself recursively[0m
+[0m[[0m[33mwarn[0m] [0m[0m      override var price: Double = price[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/BookStoreApp.scala:112:40: variable bookGenre does nothing other than call itself recursively[0m
+[0m[[0m[33mwarn[0m] [0m[0m      override var bookGenre: String = bookGenre[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

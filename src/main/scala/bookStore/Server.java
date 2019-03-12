@@ -1,5 +1,7 @@
 package bookStore;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
@@ -18,13 +20,14 @@ public class Server {
     static  ArrayList<Book> arrayList = new ArrayList<Book>();
 
     public static void main(String[] args) throws Exception {
-        //map = (Map<Integer, BookData>) BookDetails.printAllTheBooks();
         arrayList = BookStoreApp.printAllTheBooks();
         System.out.println(arrayList.get(1).authorName());
 
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/test", new MyHandler());
+        server.createContext("/testPost", new PostHandler());
+        server.createContext("/form", new FormHandler());
         server.setExecutor(null); // creates a default executor
         server.start();
     }
@@ -44,6 +47,8 @@ public class Server {
 */
             //Gson gson = new Gson();
             //String response = gson.toJson(bookList.toString());
+
+
             String response = "<style>\n" +
                     "table, th, td {\n" +
                     "  border: 1px solid black;\n" +
@@ -68,6 +73,7 @@ public class Server {
                         "  </tr>\n";
             }
             response += "</table>";
+
             System.out.println(response);
 
             t.sendResponseHeaders(200, response.length());
@@ -75,7 +81,83 @@ public class Server {
             os.write(response.getBytes());
             os.close();
         }
+
+
+
     }
+
+    static class PostHandler implements HttpHandler {
+
+        @Override
+        public void handle(HttpExchange t) throws IOException {
+            /*String response = "<html>\n" +
+                    "<body>\n" +
+                    "<form action=\"/form\">\n" +
+                    "Book Name: <input type=\"text\" name=\"BookName\" value=\"\"><br>\n" +
+                    "Author Name: <input type=\"text\" name=\"AuthorName\" value=\"\"><br>\n" +
+                    "Price: <input type=\"text\" name=\"Price\" value=\"\"><br>\n" +
+                    "Genre: <input type=\"text\" name=\"Genre\" value=\"\"><br>\n" +
+                    "<input type=\"submit\" value=\"Add\">\n" +
+                    "</form>\n" +
+                    "</body>\n" +
+                    "</html>";
+*/
+            String response = "<html>\n" +
+                    "<body>\n" +
+                    "<h3>Insert New Book</h3>\n" +
+                    "<div>\n" +
+                    "  <form action=\"/form\">\n" +
+                    "Book Name: <br><input type=\"text\" name=\"BookName\" value=\"\"><br>\n" +
+                    "Author Name: <br><input type=\"text\" name=\"AuthorName\" value=\"\"><br>\n" +
+                    "Price: <br><input type=\"text\" name=\"Price\" value=\"\"><br>\n" +
+                    "Genre: <br><input type=\"text\" name=\"Genre\" value=\"\"><br>\n" +
+                    "<br><input type=\"submit\" value=\"Add\">\n" +
+                    "</form>\n" +
+                    "</div>\n" +
+                    "</body>\n" +
+                    "</html>";
+            System.out.println(response);
+
+            t.sendResponseHeaders(200, response.length());
+            OutputStream os = t.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        }
+
+    }
+
+    static class FormHandler implements HttpHandler {
+
+        @Override
+        public void handle(HttpExchange t) throws IOException {
+
+            String url = t.getRequestURI().getQuery();
+            Map<String, String> map = getParams(url);
+            System.out.println(url);
+            System.out.println(map);
+            String response = BookStoreApp.addNewBooksFromServer(map);
+            t.sendResponseHeaders(200, response.length());
+            OutputStream os = t.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+        }
+
+        public static Map<String, String> getParams(String query)
+        {
+            String[] params = query.split("&");
+            Map<String, String> map = new HashMap<String, String>();
+            for (String param : params)
+            {
+                String name = param.split("=")[0];
+                String value = param.split("=")[1];
+                map.put(name, value);
+            }
+            return map;
+        }
+
+
+    }
+
 
 
 }
