@@ -95,7 +95,6 @@ public class Server {
     }
 
     static class FormHandler implements HttpHandler {
-
         @Override
         public void handle(HttpExchange t) throws IOException {
             String url = t.getRequestURI().getQuery();
@@ -123,8 +122,6 @@ public class Server {
                         "    <td>"+arrayList.get(j).authorName()+"</td> \n" +
                         "    <td>"+arrayList.get(j).bookGenre()+"</td> \n" +
                         "    <td>"+arrayList.get(j).price()+"</td> \n" +
-                        "<td><button  name=\"bt\" formaction=\"/remove\" value = "+j+">Remove</button></td>"+
-                        "<td><button  name=\"bt2\" formaction=\"/update\" value = "+j+">View/Update</button></td>"+
                         "  </tr>\n";
             }
             response += "</table>";
