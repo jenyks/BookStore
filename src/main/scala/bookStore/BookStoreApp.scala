@@ -1,17 +1,19 @@
 package bookStore
 
 import java.util
-
-import collection.JavaConverters._
 import collection.mutable._
 
 object BookStoreApp{
-  var test2 : String = "testing connection"
   var booklist:Map[Int,Book] = Map()
-  var noOfBooks : Int = 5
-  var myList = Array(1.9, 2.9, 3.4, 3.5)
+  //var noOfBooks : Int = 5
+  //var myList = Array
   var list = new util.ArrayList[Book]
-  //var booklist = scala.collection.mutable.Map[Int,BookData]()
+  var b : Book = new Book {
+    override var bookName: String = _
+    override var authorName: String = _
+    override var price: Double = _
+    override var bookGenre: String = _
+  }
 
   var b1 : Book = new Book {
     override var bookName: String = "Harry Potter"
@@ -50,7 +52,6 @@ object BookStoreApp{
   booklist += (4 -> b4)
   booklist += (5 -> b5)
 
-
   /*
   for(itr <- 1 to noOfBooks){
     var b : Book = new Book() {
@@ -62,26 +63,18 @@ object BookStoreApp{
     booklist += (itr -> b)
   }*/
 
-  //val bk = booklist.asJava
-
   def printAllTheBooks() : util.ArrayList[Book] = {
-
     for ((k,v) <- booklist){
       list.add(v)
-      println("Book name = "+ v.bookName)
-      println("Author name = "+ v.authorName)
-      println()
+      println("Book name = "+ v.bookName + "\tAuthor name = "+ v.authorName +"\n")
     }
-
     return list
-
   }
 
   def addNewBooks() : Unit = {
     print("Enter the number of books you want to add : ")
     val n = scala.io.StdIn.readInt()
     var count : Int = booklist.size
-
     for(itr <- 1 to n ){
       count += 1
       println("Details of Book "+itr)
@@ -94,7 +87,6 @@ object BookStoreApp{
       print("Book Genre: ")
       val newBookGenre = scala.io.StdIn.readLine()
       println()
-
       var bookObj = new Book {
         override var bookName: String = newBookName
         override var authorName: String = newAuthorName
@@ -121,56 +113,74 @@ object BookStoreApp{
 
   def updateBookData(key : Int) : Unit = {
     val obj : Option[Book] = booklist.get(key)
-
     print("Enter new Book Name : ")
-    val bookname = scala.io.StdIn.readLine()
+    val newbookname = scala.io.StdIn.readLine()
     print("Enter new Book Name : ")
-    val authorname = scala.io.StdIn.readLine()
+    val newauthorname = scala.io.StdIn.readLine()
     print("Enter new Book Name : ")
-    val price = scala.io.StdIn.readDouble()
+    val newprice = scala.io.StdIn.readDouble()
     print("Enter new Book Name : ")
-    val bookGenre = scala.io.StdIn.readLine()
+    val newbookGenre = scala.io.StdIn.readLine()
 
     var newObj = new Book {
-      override var bookName: String = bookname
-      override var authorName: String = authorname
-      override var price: Double = price
-      override var bookGenre: String = bookGenre
+      override var bookName: String = newbookname
+      override var authorName: String = newauthorname
+      override var price: Double = newprice
+      override var bookGenre: String = newbookGenre
     }
-
     booklist(key) = newObj
-
   }
 
   def deleteBook(key : Int) : Unit = {
     booklist -= key
   }
 
+  def addNewBooksFromServer(map: java.util.Map[String, String]) : Unit = {
+      var newBook = new Book {
+        override var bookName: String = map.get("BookName").replace("+"," ")
+        override var authorName: String = map.get("AuthorName").replace("+"," ")
+        override var price: Double = map.get("Price").toDouble
+        override var bookGenre: String = map.get("Genre").replace("+"," ")
+      }
+      var count : Int = booklist.size+1
+      booklist += (count -> newBook)
+
+      for ((k,v) <- booklist){
+        println("Book name = "+ v.bookName + "\tAuthor name = "+ v.authorName)
+        println()
+      }
+      list.add(newBook)
+      //list.add(booklist.get(count).get)
+  }
+
+
+  def deleteBook(map: java.util.Map[String, String]) : Unit = {
+      var key : String = map.get("bt")
+      list.remove(key.toInt)
+  }
+
+  def showBook(map: java.util.Map[String, String]) : Book = {
+    var key : String = map.get("bt2")
+    var book : Book = list.get(key.toInt)
+    var index2 = Integer.parseInt(key)
+    b = book
+    return book
+  }
+
+  def updateBook(map: java.util.Map[String, String]) : Unit = {
+    var index = list.indexOf(b)
+    b.bookName = map.get("BookName").replace("+"," ")
+    b.authorName= map.get("AuthorName").replace("+"," ")
+    b.price= map.get("Price").toDouble
+    b.bookGenre= map.get("Genre").replace("+"," ")
+    list.set(index,b)
+  }
 
   def main(args: Array[String]): Unit = {
     printAllTheBooks()
     addNewBooks()
     updateBookData(1)
   }
-
-  def addNewBooksFromServer(map: java.util.Map[String, String]) : String = {
-      var newBook = new Book {
-        override var bookName: String = map.get("BookName")
-        override var authorName: String = map.get("AuthorName")
-        override var price: Double = map.get("Price").toDouble
-        override var bookGenre: String = map.get("Genre")
-      }
-    var count : Int = booklist.size+1
-    booklist += (count -> newBook)
-    var response : String = "Book has been added successfully!"
-
-    for ((k,v) <- booklist){
-      println("Book name = "+ v.bookName + "\tAuthor name = "+ v.authorName)
-      println()
-    }
-    return response
-  }
-
 
 
 }
