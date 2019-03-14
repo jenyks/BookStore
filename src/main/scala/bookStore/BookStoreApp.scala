@@ -39,6 +39,7 @@ object BookStoreApp{
   def save(book : Book) : Unit = {
     var count : Int = booklist.size+1
     booklist += (count -> book)
+    System.out.println(booklist)
   }
 
   def updateBookData(key : Int) : Unit = {
