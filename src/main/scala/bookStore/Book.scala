@@ -1,8 +1,3 @@
 package bookStore
 
-abstract class Book {
-  var bookName : String
-  var authorName : String
-  var price : Double
-  var bookGenre : String
-}
+case class Book (bookName : String,authorName : String, price : Double,bookGenre : String)
