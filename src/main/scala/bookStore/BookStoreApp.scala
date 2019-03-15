@@ -5,7 +5,7 @@ import collection.mutable._
 
 object BookStoreApp{
   var booklist:Map[Int,Book] = Map()
-  var list =  new util.ArrayList[Book]
+
 
   val b1 = Book("Harry Potter","J K Rowling",275.00,"Fantasy")
   val b2 = Book("Let Us C","Yashavant Kanetkar",580.00,"Programming")
@@ -20,6 +20,7 @@ object BookStoreApp{
   booklist += (5 -> b5)
 
   def retrieveAll() : util.ArrayList[Book] = {
+    var list =  new util.ArrayList[Book]
     for((k,v) <- booklist){
       list.add(v)
     }
@@ -37,13 +38,13 @@ object BookStoreApp{
   }
 
   def save(book : Book) : Unit = {
-    var count : Int = booklist.size+1
-    booklist += (count -> book)
+    var key : Int = booklist.keysIterator.max+1
+    booklist += (key -> book)
     System.out.println(booklist)
   }
 
-  def updateBookData(key : Int) : Unit = {
-
+  def updateBookData(key : Int, book: Book) : Unit = {
+    booklist += (key -> book)
   }
 
   def main(args: Array[String]): Unit = {
