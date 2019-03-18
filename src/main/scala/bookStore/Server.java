@@ -113,7 +113,10 @@ public class Server {
             String url = t.getRequestURI().getQuery();
             Map<String, String> map = getParams(url);
             int key = Integer.parseInt(map.get("id"));
-            //System.out.println(t.getRequestBody());
+
+            System.out.println(url);
+            System.out.println(t.getRequestBody());
+
             String body = null;
             StringBuilder stringBuilder = new StringBuilder();
             BufferedReader bufferedReader = null;
