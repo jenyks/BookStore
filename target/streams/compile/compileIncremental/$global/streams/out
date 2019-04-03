@@ -1,1 +1,27 @@
-[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set(/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Send.java, /home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/Send.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Book.scala, /home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/BookStoreApp.scala, /home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Server.java)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set(/home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Book.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Server$MyHandler.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$$anon$3.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Server.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$$anon$2.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$$anon$1.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/Server$PostHandler.class, /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes/bookStore/BookStoreApp$.class)[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(bookStore.Server.PostHandler, bookStore.BookStoreApp, bookStore.Server.MyHandler, bookStore.Server, bookStore.Book)[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set(/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Server.java, /home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/BookStoreApp.scala, /home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Book.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 5 sources: invalidated sources (5) exceeded 50.0% of all sources[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 3 Scala sources and 2 Java sources to /home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.5:compile for Scala 2.12.8[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.5:compile for Scala 2.12.8[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 345daa21 for Scala compiler version 2.12.8[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes:/home/jeneesha/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.8.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/home/jeneesha/IdeaProjects/BookStroreApplication/target/scala-2.12/classes:/home/jeneesha/.ivy2/cache/com.google.code.gson/gson/jars/gson-2.8.5.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 2.481965109 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mAttempting to call com.sun.tools.javac.api.JavacTool@6ec01d57 directly...[0m

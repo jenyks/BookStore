@@ -1,8 +1,12 @@
 import java.util
+
 import bookStore.{Book, BookStoreApp}
 import org.scalatest.FunSuite
+import  org.scalatest.Ignore
+
 import scala.collection.mutable
 
+//@Ignore
 class BookStoreAppTest extends FunSuite {
   var booklistTest:mutable.LinkedHashMap[Int, Book] = new mutable.LinkedHashMap()
   val b1 = Book("Harry Potter","J K Rowling",275.00,"Fantasy")
@@ -50,5 +54,6 @@ class BookStoreAppTest extends FunSuite {
     val updateBook = Book("Test","Update",235,"Test")
     BookStoreApp.updateBookData(2,updateBook)
     assert(updateBook === BookStoreApp.findById(2))
+    System.out.println("run")
   }
 }

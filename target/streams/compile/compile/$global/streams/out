@@ -1,7 +1,14 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/BookStoreApp.scala:111:36: variable price does nothing other than call itself recursively[0m
-[0m[[0m[33mwarn[0m] [0m[0m      override var price: Double = price[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                   ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/BookStoreApp.scala:112:40: variable bookGenre does nothing other than call itself recursively[0m
-[0m[[0m[33mwarn[0m] [0m[0m      override var bookGenre: String = bookGenre[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Send.java:3:1: package com.rabbitmq.client does not exist[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.rabbitmq.client.Channel;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Send.java:4:1: package com.rabbitmq.client does not exist[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.rabbitmq.client.Connection;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Send.java:5:1: package com.rabbitmq.client does not exist[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.rabbitmq.client.ConnectionFactory;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Send.java:12:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class ConnectionFactory[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class bookStore.Send[0m
+[0m[[0m[31merror[0m] [0m[0m        ConnectionFactory factory = new ConnectionFactory();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/jeneesha/IdeaProjects/BookStroreApplication/src/main/scala/bookStore/Send.java:12:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class ConnectionFactory[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class bookStore.Send[0m
+[0m[[0m[31merror[0m] [0m[0m        ConnectionFactory factory = new ConnectionFactory();[0m
