@@ -9,11 +9,11 @@ object BookServer {
   var responseMessage : String = _
   val factory = new ConnectionFactory()
   factory.setHost("localhost")
-  //val connection = factory.newConnection()
+  val connection = factory.newConnection()
 
 
   def main(argv: Array[String]) {
-    val connection = factory.newConnection()
+
     val channel = connection.createChannel()
     channel.exchangeDeclare(EXCHANGE_NAME, "direct")
     val queueName = channel.queueDeclare().getQueue
@@ -54,7 +54,6 @@ object BookServer {
 
 
   def createReplyConnection (message : String) : Unit = {
-    val connection = factory.newConnection()
     val channel2 = connection.createChannel()
     channel2.exchangeDeclare(EXCHANGE_NAME_RES, "direct")
     channel2.basicPublish(EXCHANGE_NAME_RES, BINDING_KEY_RESPONSE, null, message.getBytes("UTF-8"))

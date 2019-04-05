@@ -10,11 +10,11 @@ object BookClient {
   private val BINDING_KEY_RESPONSE = "response"
   val factory = new ConnectionFactory()
   factory.setHost("localhost")
-  //val connection = factory.newConnection()
-
+  val connection = factory.newConnection()
 
   def main(argv: Array[String]) {
     getUserInput()
+    getResponse()
   }
 
   def getUserInput(): Unit ={
@@ -32,7 +32,7 @@ object BookClient {
       System.out.print("Enter Id : ")
       val id = scala.io.StdIn.readLine()
       message = message.append(",").append(id)
-      createConnection(message.toString())
+
     }else if (function.equalsIgnoreCase("removeById")){
       System.out.print("Enter Id : ")
       val id = scala.io.StdIn.readLine()
@@ -63,22 +63,22 @@ object BookClient {
       message = message.append(",").append(bookId).append(",").append(bookName).append(",").append(authorName).append(",").append(price).append(",").append(bookGenre)
     }
 
-    //createConnection(message.toString())
+    createConnection(message.toString())
 
   }
 
   def createConnection (message : String) : Unit = {
-    val connection = factory.newConnection()
+
     val channel = connection.createChannel()
     channel.exchangeDeclare(EXCHANGE_NAME, "direct")
     channel.basicPublish(EXCHANGE_NAME, BINDING_KEY, null, message.getBytes("UTF-8"))
     println(" [x] Sent '" + message + "'")
 
-    getResponse()
+    //getResponse()
   }
 
   def getResponse() : Unit = {
-    val connection = factory.newConnection()
+
     val channel2 = connection.createChannel()
     channel2.exchangeDeclare(EXCHANGE_NAME_RES, "direct")
     val queueName = channel2.queueDeclare().getQueue
@@ -93,6 +93,7 @@ object BookClient {
     }
 
     channel2.basicConsume(queueName, false, deliverCallback, _ => {})
-
   }
+
+
 }
